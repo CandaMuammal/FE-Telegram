@@ -58,7 +58,7 @@ const Chatroom = ({ socket, ...props }) => {
 
     useEffect(() => {
         if (friend) {
-            axios.get(`${process.env.REACT_APP_API_URL}history/${friend.id}`, {
+            axios.get(`${process.env.REACT_APP_API_URL}v1/history/${friend.id}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('token')}`
                 }

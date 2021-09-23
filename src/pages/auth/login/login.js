@@ -93,7 +93,7 @@ function Login({ setSocket, ...props }) {
     const handleLogin = () => {
 
         // axios.post('http://localhost:4000/v1/user/login', { email: email, password: password })
-        axios.post(`${process.env.REACT_APP_API_URL}user/login`, { email: email, password: password })
+        axios.post(`${process.env.REACT_APP_API_URL}v1/user/login`, { email: email, password: password })
 
             .then((res) => {
                 toast('Login successfully..')
