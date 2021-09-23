@@ -123,7 +123,7 @@ function Login({ setSocket, ...props }) {
             })
             .catch((err) => {
                 // console.log(err);
-                alert('Login failed')
+                toast('Login failed')
             })
 
     }

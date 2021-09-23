@@ -124,7 +124,7 @@
 
 .wrapperchat {
     height: 500px;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: none;
     padding: 20px;
     background-color: rgb(231, 229, 229);
@@ -289,7 +289,7 @@
 
   .scroll {
    
-        overflow-y: auto;
+        overflow-y: hidden;
       
   }
 
