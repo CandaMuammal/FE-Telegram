@@ -113,7 +113,7 @@ function Login({ setSocket, ...props }) {
                 localStorage.setItem('image', image)
                 localStorage.setItem('id', id)
 
-                const resultSocket = io('http://localhost:4000', {
+                const resultSocket = io(`${process.env.REACT_APP_URL_API}`, {
                     query: {
                         token: token
                     }
