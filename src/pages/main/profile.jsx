@@ -44,7 +44,7 @@ const Profile = ({ socket, ...props }) => {
 
     // ini untuk get friends
     useEffect(() => {
-        axios.get('http://localhost:4000/v1/user/', {
+        axios.get(`${process.env.REACT_APP_API_URL}user/`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -57,7 +57,7 @@ const Profile = ({ socket, ...props }) => {
 
     useEffect(() => {
         if (friend) {
-            axios.get(`http://localhost:4000/v1/history/${friend.id}`, {
+            axios.get(`${process.env.REACT_APP_API_URL}history/${friend.id}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('token')}`
                 }
