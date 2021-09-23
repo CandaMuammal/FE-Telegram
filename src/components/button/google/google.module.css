@@ -1,0 +1,9 @@
+.btngoogle {
+    color: #7E98DF;
+    background: white;
+    width: 375px;
+    height: 60px;
+    border: 2px solid #7E98DF;
+    border-radius: 30px;
+    margin: 20px 0;
+}

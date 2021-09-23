@@ -1,0 +1,77 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: 
+    #F6F6F6;
+}
+
+.body {
+    width: 450px;
+    height: 650px;
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodycontent h2 {
+    color: #7E98DF;
+    text-align: center;
+
+}
+
+.bodycontent h6 {
+    margin: 0;
+    align-self: flex-start;
+}
+
+.bodycontent {
+    width: 80%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bodycontent h5 {
+    width: 100%;
+    margin-top: 0;
+}
+.bodycontent h5 a {
+    text-decoration: none;
+    color: #7E98DF;
+    margin-left: 70%;
+    margin-top: 20px;
+}
+
+.bodycontent h4 {
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: grey;
+    text-align: center;
+
+}
+
+
+.register {
+    margin: 0;
+    text-align: center;
+}
+
+.bodycontent .register a {
+    margin: 0;
+}
+
+.valids {
+    margin-top: -30px;
+    color: red;
+    font-size: 10px;
+    margin-bottom: 20px;
+}

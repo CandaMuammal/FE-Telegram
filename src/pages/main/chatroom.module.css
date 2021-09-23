@@ -1,0 +1,367 @@
+.container {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.bodycontent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #7E98DF;
+    border-radius: 5px;
+    border-right: 1px solid #7E98DF;
+    
+
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.menuleft {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    /* border: 1px solid black; */
+    /* border-bottom: 3px solid lightskyblue; */
+    
+
+}
+
+.menubar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.menubar .avaaa {
+    height: 30px;
+    width: 30px;
+    object-fit: scale-down;
+    border-radius: 100%;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.search img {
+    padding: 0 0px 28px 0;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    /* border: 1px solid black; */
+    overflow-y: auto;
+}
+
+.unlist {
+    padding-left: 0;
+}
+
+.conlist {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid lightskyblue;
+    padding-left: 20px;
+
+}
+
+.conlist img {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+
+
+.right {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #7E98DF;
+    border-radius: 5px;
+    border-left: 1px solid #7E98DF;
+    /* box-sizing: border-box; */
+}
+
+.wrapperchat {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: none;
+    padding: 20px;
+    background-color: rgb(231, 229, 229);
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.wrapperchat span {
+    font-size: 8px;
+}
+
+.namecont {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    padding: 18px;
+    box-sizing: border-box;
+    /* border-bottom: 1px solid lightskyblue; */
+
+}
+
+.chat {
+    display: flex;
+    flex-direction: row;
+}
+
+.ballon1{
+    margin-left: auto;
+    width: fit-content;
+    background-color: rgb(214, 233, 214) ;
+    height: 40px;
+    list-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+     
+  }
+  .ballon2{
+    word-wrap: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    background-color: #f8f8f8;
+    height: 40px;
+    list-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .send {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px 0px 20px;
+      box-sizing: border-box;
+  }
+
+  .send button {
+      width: 100px;
+      height: 30px;
+      margin-left: 5px;
+      border-radius: 10px;
+      background-color: #7E98DF; 
+      border: none; 
+      color: white;
+      font-weight: bolder;
+  }
+
+  .sendbtn {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .send .sendbtn .feature {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+  }
+
+  .feature img {
+    width: 90px;
+    height: 20px;
+
+  }
+
+  .detailprofile {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10px;
+  }
+
+  .avaprofile {
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+      object-fit: contain;
+      margin-bottom: 25px;
+  }
+
+  .status {
+      margin-bottom: 10px;
+  }
+
+  .avaprofile img {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    bottom: 50px;
+  }
+
+  .nameprofile, .emailprofile, .phoneprofile {
+      width: 400px;
+      margin: 0;
+
+  }
+
+  
+
+  .detailprofile button {
+      width: 200px;
+      height: 40px;
+      border-radius: 30px;
+      border: none;
+      background-color: #7E98DF;
+      color: white;
+      font-weight: bolder;
+      margin-bottom: 10px;
+
+  }
+
+  .detail {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 30px;
+      overflow-x: hidden;
+  }
+
+  .piccont {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .piccont img {
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .scroll {
+   
+        overflow-y: auto;
+      
+  }
+
+  .avaprofile input {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    opacity: 0.1;
+    position: relative;
+    z-index: 4;
+    /* top: 50px; */
+  }
+
+  @media (max-width: 600px) {
+    .left {
+        width: 15%;
+    }
+
+    .right {
+        width: 85%;
+    }
+
+    .menubar {
+        flex-direction: column;
+        
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        object-fit: scale-down;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .ballon1, .ballon2 {
+        display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    word-wrap: break-word;
+
+    }
+
+    .wrapperchat {
+        overflow-x: hidden;
+        flex-wrap: wrap;
+        word-wrap: break-word;
+
+    }
+
+    .detailprofile {
+        width: 100%;
+        padding-left: 0%;
+    }
+
+    .nameprofile, .emailprofile, .phoneprofile {
+        width: 300px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+  
+    }
+    .menubar .unlist {
+        overflow-x: hidden;
+    }
+
+    .unlist img {
+        width: 30px;
+        height: 30px;
+    }
+  }
