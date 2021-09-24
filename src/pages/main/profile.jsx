@@ -130,7 +130,7 @@ const Profile = ({ socket, ...props }) => {
         formData.append('phone', form.phone)
 
 
-        axios.put(`${process.env.REACT_APP_API_URL}user/${iduser}`, formData)
+        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`, formData)
             // axios.put(`${process.env.REACT_APP_API_URL}user`, formData)
 
             .then((res) => {
@@ -141,7 +141,7 @@ const Profile = ({ socket, ...props }) => {
                 localStorage.setItem('email', form.email)
                 localStorage.setItem('phone', form.phone)
                 // localStorage.setItem('image', form.image)
-                axios.get(`${process.env.REACT_APP_API_URL}user/${iduser}`)
+                axios.get(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`)
                 .then ((res) => {
                     const data = res.data.data
                     const ava = data[0].image
@@ -175,7 +175,7 @@ const Profile = ({ socket, ...props }) => {
                     label: "Yes",
                     onClick: () =>
                         axios
-                            .delete(`${process.env.REACT_APP_API_URL}user/${iduser}`, {
+                            .delete(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`, {
                                 headers: {
                                     authorization: `Bearer ${localStorage.getItem('token')}`
                                 },
