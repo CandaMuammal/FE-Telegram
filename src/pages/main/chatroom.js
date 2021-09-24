@@ -45,7 +45,7 @@ const Chatroom = ({ socket, ...props }) => {
 
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}user`, {
+        axios.get(`${process.env.REACT_APP_API_URL}v1/user`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
