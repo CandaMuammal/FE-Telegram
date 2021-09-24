@@ -53,6 +53,8 @@ const Chatroom = ({ socket, ...props }) => {
             .then((res) => {
                 const dataUsers = res.data.data
                 setFriends(dataUsers)
+                console.log(friends)
+                
             })
     }, [])
 
