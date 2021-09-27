@@ -1,6 +1,6 @@
 <p align="center">
      <img src="https://i.postimg.cc/pT9Ypg8w/teleg.png"   alt= border="0" />
-     <img src="https://i.postimg.cc/Zqn6M1fW/tellee.png"   alt= border="0" />
+     <img  src="https://i.postimg.cc/XNd1LCGT/telltel.png"   alt= border="0" />
 
 </p>
 
