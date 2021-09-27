@@ -1,5 +1,5 @@
 <p align="center">
-     <img src="https://i.postimg.cc/pT9Ypg8w/teleg.png"   alt= border="0" />
+     <img src="https://i.postimg.cc/pT9Ypg8w/teleg.png"   alt= border="0" /> <br/>
      <img  src="https://i.postimg.cc/XNd1LCGT/telltel.png"   alt= border="0" />
 
 </p>
