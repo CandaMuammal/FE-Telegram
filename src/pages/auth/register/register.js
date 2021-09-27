@@ -42,8 +42,8 @@ function Register() {
             email: '',
             password: ''
         },
-        onSubmit: form => {
-            dispatch(register(form, history))
+        onSubmit: initialValues => {
+            dispatch(register(initialValues, history))
         },
         validationSchema: Yup.object({
 

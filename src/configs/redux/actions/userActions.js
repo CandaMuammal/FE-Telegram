@@ -33,9 +33,9 @@ import io from 'socket.io-client'
 
 // }
 
-export const register = (data, history) => (dispatch) => {
+export const register = (initialValues, history) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_API_URL}v1/user/register`, data)
+    .post(`${process.env.REACT_APP_API_URL}v1/user/register`, initialValues)
     .then((result) => {
       const dataResult = result.data.data
       console.log(dataResult)
