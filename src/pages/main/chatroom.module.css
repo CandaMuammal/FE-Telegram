@@ -86,6 +86,7 @@
     height: 80%;
     /* border: 1px solid black; */
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .unlist {
