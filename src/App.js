@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     setupSocket()
-    // socket.emit('sendMsgToBack', 'hallo my name is risano')
+    // socket.emit('sendMsgToBack', 'hallo my name is ')
   }, [])
 
   return(

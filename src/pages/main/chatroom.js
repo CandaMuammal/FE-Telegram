@@ -149,7 +149,7 @@ const Chatroom = ({ socket, ...props }) => {
                                     {friend ? friend.username : ""}
                                 </div>
                                 <div className={style.sidebar}>
-                                    <Link to="/contact"><button>=</button></Link>
+                                    <Link to=""><button>=</button></Link>
                                 </div>
                             </div>
                             {friend && (<>
