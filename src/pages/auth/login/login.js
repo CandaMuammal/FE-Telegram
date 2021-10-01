@@ -113,7 +113,7 @@ function Login({ setSocket, ...props }) {
                 localStorage.setItem('image', image)
                 localStorage.setItem('id', id)
 
-                const resultSocket = io(`${process.env.REACT_APP_API_URL}`, {
+                const resultSocket = io(`https://backend-chat-realtime-telegram.herokuapp.com`, {
                     query: {
                         token: token
                     }
