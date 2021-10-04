@@ -11,6 +11,7 @@ import send from '../../assets/send.png'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import kosong from '../../assets/images.png'
 
 toast.configure()
 const Chatroom = ({ socket, ...props }) => {
@@ -153,7 +154,7 @@ const Chatroom = ({ socket, ...props }) => {
                                     <Link to=""><button>=</button></Link>
                                 </div>
                             </div>
-                            {friend && (<>
+                            {friend ? (<>
 
                                 <div class={style.wrapperchat}>
 
@@ -173,7 +174,10 @@ const Chatroom = ({ socket, ...props }) => {
                                         <button onClick={handleSendMessage}>Send</button>
                                     </div>
                                 </div>
-                            </>)}
+                            </>) 
+                            : 
+                            <div className={style.kosong}><img src={kosong} alt="" /></div>
+                            }
                         </div>
 
                     </div>
