@@ -127,6 +127,7 @@ const Chatroom = ({ socket, ...props }) => {
                                     <div className={style.search}>
                                         <Email
                                             style={searchbar}
+                                            disabled="true"
                                         />
                                         <img src={searchicon} alt="" />
                                     </div>
