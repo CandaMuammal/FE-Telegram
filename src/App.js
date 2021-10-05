@@ -24,7 +24,7 @@ import ForgotPass from './pages/auth/forgotpassword/forgot'
 // import Teschat from './pages/main/teschat'
 import Chatroom from './pages/main/chatroom'
 import Profile from './pages/main/profile'
-import Contact from './pages/main/contact'
+// import Contact from './pages/main/contact'
 import PublicRoute from './configs/route/publicRoute'
 
 
