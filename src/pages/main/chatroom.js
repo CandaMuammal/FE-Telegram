@@ -150,9 +150,7 @@ const Chatroom = ({ socket, ...props }) => {
                                 <div className={style.name}>
                                     {friend ? friend.username : ""}
                                 </div>
-                                <div className={style.sidebar}>
-                                    {/* <button>=</button> */}
-                                </div>
+                                
                             </div>
                             {friend ? (<>
 

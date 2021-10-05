@@ -62,7 +62,7 @@ function App() {
         <Route path="/chatroom"  render={(props) => <Chatroom {...props} socket={socket} />}/>
         <Route path="/register" component={Register} />
         <Route path="/profile" component={Profile} />
-        <Route path="/contact" component={Contact} />
+        {/* <Route path="/contact" component={Contact} /> */}
 
       </Switch>
     </BrowserRouter>
