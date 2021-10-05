@@ -36,7 +36,7 @@ function App() {
     
     // ini saya gunakan ketika browser di refresh
     if(token && !socket){
-      const resultSocket = io('http://backend-chat-realtime-telegram.herokuapp.com',{
+      const resultSocket = io('https://backend-chat-realtime-telegram.herokuapp.com',{
         query: {
           token: localStorage.getItem('token')
         }
