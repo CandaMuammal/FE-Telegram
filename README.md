@@ -4,7 +4,15 @@
 
 </p>
 
-
+<p align="center">
+    <br />
+    <br />
+    <br />
+    <a href="https://fe-telegram.vercel.app/login">View Demo</a>
+    ·
+    <a href="https://github.com/CandaMuammal/FE-Telegram/issues">Report Bug</a>
+    ·
+  </p>
 ---
 
 
@@ -96,15 +104,26 @@ npm install
 
 
 
-<!-- <p align="center">
-  <span>
-   <img src="https://i.postimg.cc/TYPDNjL1/vehicle1-4.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/PrcP6gnV/vehicle2-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/TwRwLGn1/vehicle3-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/wMrTGmZR/vehicle4-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/JhK8FXB7/vehicle5-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-  </span>
-</p> -->
+<p align="center">
+  <div align="center">
+   <img width="250" src="https://i.postimg.cc/zBvqwC2V/1.png"   alt= border="0" /> 
+   <img width="250" src="https://i.postimg.cc/nzXCVfJR/2.png"   alt= border="0" /> 
+   <img width="250" src="https://i.postimg.cc/J4xmFdwG/3.png"   alt= border="0" /> 
+  </div>
+    <div align="center">
+   <img width="700" src="https://i.postimg.cc/YS5wF5Fy/4a.png"   alt= border="0" /> 
+  </div>
+    <div align="center">
+   <img width="350" src="https://i.postimg.cc/nrZbRq04/4b.png"   alt= border="0" /> 
+   <img width="350" src="https://i.postimg.cc/NjVhh3df/5.png"   alt= border="0" /> 
+  </div>
+    <div align="center">
+   <img width="350" src="https://i.postimg.cc/kMykM6TH/6.png"   alt= border="0" /> 
+   <img width="350" src="https://i.postimg.cc/wvpGggLH/7.png"   alt= border="0" /> 
+  </div>
+ 
+  
+</p>
 
 
 ## Authors
