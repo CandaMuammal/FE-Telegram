@@ -12,17 +12,27 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import kosong from '../../assets/images.png'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 
 toast.configure()
 const Chatroom = ({ socket, ...props }) => {
     // const { addToast } = useToasts();
+
+    const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+
+    console.log(user.username)
+    const avatar = user.image
 
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
     const [friends, setFriends] = useState([])
     const [friend, setFriend] = useState(null)
     // const resultQuery = qs.parse(props.location.search)
-    const avatar = localStorage.getItem('image')
+    // const avatar = localStorage.getItem('image')
 
 
     useEffect(() => {
@@ -36,7 +46,7 @@ const Chatroom = ({ socket, ...props }) => {
                     setMessages((currentValue) => [...currentValue, data])
                 } else {
                     // NotificationManager.info(`${data.messages}`);
-                    toast(`Ada pesan baru! dari ${data.sender_id} `)
+                    toast(`Ada pesan baru! dari ${data.username} `)
                 }
 
             })
@@ -81,7 +91,8 @@ const Chatroom = ({ socket, ...props }) => {
             console.log(friend);
             socket.emit('sendMessage', {
                 idReceiver: friend.id,
-                messageBody: message
+                messageBody: message,
+                username: user.username
             }, (data) => {
                 setMessages((currentValue) => [...currentValue, data])
             })
@@ -161,8 +172,6 @@ const Chatroom = ({ socket, ...props }) => {
                                             <div className={`${friend.id === item.receiver_id ? style.ballon1 : style.ballon2}`}> <p> {item.messages} <span>[{item.created_at}]</span></p></div>
 
                                         )}
-
-
                                     </ScrollToBottom>
                                 </div>
                                 <div className={style.send}>
@@ -174,7 +183,10 @@ const Chatroom = ({ socket, ...props }) => {
                                 </div>
                             </>) 
                             : 
-                            <div className={style.kosong}><img src={kosong} alt="" /></div>
+                            <>
+                            <div className={style.kosong}><img src={kosong} alt="" /> <br />Start a conversations with your friends</div>
+                            {/* <div className={style.kosong}>Start a conversations with your friends</div> */}
+                            </>
                             }
                         </div>
 

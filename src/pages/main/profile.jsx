@@ -14,9 +14,21 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css"
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
+import {updateUser} from '../../configs/redux/actions/userActions'
 
 toast.configure()
 const Profile = ({ socket, ...props }) => {
+
+    const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+
+    console.log(user.username)
+    const avatar = user.image
+
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
     const [friends, setFriends] = useState([])
@@ -95,10 +107,10 @@ const Profile = ({ socket, ...props }) => {
 
 
     const [form, setForm] = useState({
-        username: uname,
-        email: mail,
-        phone: phoneNumber,
-        image: image,
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        image: user.image,
         imagePreview: null
 
     })
@@ -111,55 +123,71 @@ const Profile = ({ socket, ...props }) => {
     // console.log(form.username)
     // console.log(form.email)
     // console.log(form.phone)
+    console.log(user.image)
 
 
     const handleInputFile = (e) => {
-        setForm({
+        if (e.target.files) {
+            setForm({
             ...form,
             image: e.target.files[0],
             imagePreview: URL.createObjectURL(e.target.files[0])
         })
+        } else {
+            setForm({
+                ...form,
+                image: user.image,
+                // imagePreview: URL.createObjectURL(e.target.files[0])
+            })
+        }
+        
         console.log(e.target.files)
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        const formData = new FormData()
-        formData.append('username', form.username)
-        formData.append('email', form.email)
-        formData.append('image', form.image)
-        formData.append('phone', form.phone)
-
-
-        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`, formData)
-            // axios.put(`${process.env.REACT_APP_API_URL}user`, formData)
-
-            .then((res) => {
-                // alert('success')
-                // console.log(form.username)
-                console.log(form.image)
-                localStorage.setItem('username', form.username)
-                localStorage.setItem('email', form.email)
-                localStorage.setItem('phone', form.phone)
-                // localStorage.setItem('image', form.image)
-                axios.get(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`)
-                .then ((res) => {
-                    const data = res.data.data
-                    const ava = data[0].image
-                    console.log(data)
-                    localStorage.setItem('image', ava)
-                    
-                })
-                .catch((err) => {
-                    toast(err.message)
-                })
-
-                toast('success updated profile!')
-            })
-            .catch((err) => {
-                toast(err.message)
-
-            })
+        dispatch(updateUser(form, user))
     }
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+        // const formData = new FormData()
+        // formData.append('username', form.username)
+        // formData.append('email', form.email)
+        // formData.append('image', form.image)
+        // formData.append('phone', form.phone)
+
+
+        // axios.put(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`, formData)
+        //     // axios.put(`${process.env.REACT_APP_API_URL}user`, formData)
+
+        //     .then((res) => {
+        //         // alert('success')
+        //         // console.log(form.username)
+        //         console.log(form.image)
+        //         localStorage.setItem('username', form.username)
+        //         localStorage.setItem('email', form.email)
+        //         localStorage.setItem('phone', form.phone)
+        //         // localStorage.setItem('image', form.image)
+        //         axios.get(`${process.env.REACT_APP_API_URL}v1/user/${iduser}`)
+        //         .then ((res) => {
+        //             const data = res.data.data
+        //             const ava = data[0].image
+        //             console.log(data)
+        //             localStorage.setItem('image', ava)
+                    
+        //         })
+        //         .catch((err) => {
+        //             toast(err.message)
+        //         })
+
+        //         toast('success updated profile!')
+        //     })
+        //     .catch((err) => {
+        //         toast(err.message)
+
+        //     })
+    // }
 
     const handleLogout = () => {
         localStorage.clear();
@@ -254,7 +282,7 @@ const Profile = ({ socket, ...props }) => {
                                     <div className={style.menubar}>
                                         <Link to="/chatroom"><img className={style.icon} src={telegram} alt="" /></Link>
                                         {/* <button>=</button> */}
-                                        <img className={style.avaaa} src={image} alt="" />
+                                        <img className={style.avaaa} src={avatar} alt="" />
                                     </div>
                                     <div className={style.search}>
                                         <Email
@@ -278,7 +306,7 @@ const Profile = ({ socket, ...props }) => {
                             <div className={style.detailprofile}>
                                 <div className={style.avaprofile}>
                                     <input type="file" onChange={handleInputFile} />
-                                    <img src={form.image} alt="" />
+                                    <img src={avatar} alt="" />
                                 </div>
                                 <div className={style.status}><h5>Hey! I am using Telegram</h5></div>
                                 <div className={style.nameprofile}>

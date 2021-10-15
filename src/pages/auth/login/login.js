@@ -13,147 +13,68 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { login } from '../../../configs/redux/actions/userActions'
 
 
 toast.configure()
 function Login({ setSocket, ...props }) {
 
-    // const history = useHistory()
-    // const dispatch = useDispatch()
-    // const [form, setForm] = useState({
-    //     email: '',
-    //     password: ''
-    // })
-    // const handleForm = (e) => {
-    //     setForm({
-    //         ...form,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-    // const handleLogin = () => {
-    //     dispatch(login(form, history))
-    //     try {
-    //         history.push('/chatroom')
-    //         // alert ('benar')
-    //     } catch (error) {
-    //         alert('password anda salah')
-    //     }
-    // }
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const history = useHistory()
+    const dispatch = useDispatch()
 
-    // const formik = useFormik({
-    //     initialValues: {
-    //         email: '',
-    //         password: ''
-    //     },
-    //     onSubmit: ({email, password}) => {
-    //         axios.post(`${process.env.REACT_APP_API_URL}user/login`, { email: email, password: password })
+    const formik = useFormik({
+        initialValues: {
+            // username: '',
+            email: '',
+            password: ''
+        },
+        onSubmit: values => {
+            dispatch(login(values, setSocket, history))
 
-    //             .then((res) => {
-    //                 toast('login successfully..')
-    //                 const result = res.data.data
-    //                 const token = result.token
-    //                 const username = result.username
-    //                 const email = result.email
-    //                 const phone = result.phone
-    //                 const image = result.image
-    //                 const id = result.id
+        },
+        validationSchema: Yup.object({
+
+            email: Yup.string().required('Email is required').email('Please enter your correct email'),
+            password: Yup.string().required('Password is required').min(8, "Password must contain at least 8 letters")
+        })
 
 
-    //                 localStorage.setItem('token', token)
-    //                 localStorage.setItem('username', username)
-    //                 localStorage.setItem('email', email)
-    //                 localStorage.setItem('phone', phone)
-    //                 localStorage.setItem('image', image)
-    //                 localStorage.setItem('id', id)
-
-    //                 const resultSocket = io('http://localhost:4000', {
-    //                     query: {
-    //                         token: token
-    //                     }
-    //                 })
-    //                 setSocket(resultSocket)
-    //                 props.history.push('/chatroom')
-    //             })
-    //             .catch((err) => {
-    //                 // console.log(err);
-    //                 toast('Login failed')
-    //             })
-    //     },
-    //     validationSchema: Yup.object({
-
-    //         email: Yup.string().required('Email is required').email('Please enter your correct email'),
-    //         password: Yup.string().required('Password is required').min(8, "Password must contain at least 8 letters")
-    //     })
-
-    // })
-
-    const handleLogin = () => {
-
-        // axios.post('http://localhost:4000/v1/user/login', { email: email, password: password })
-        axios.post(`${process.env.REACT_APP_API_URL}v1/user/login`, { email: email, password: password })
-
-            .then((res) => {
-                toast('Login successfully..')
-                const result = res.data.data
-                const token = result.token
-                const username = result.username
-                const email = result.email
-                const phone = result.phone
-                const image = result.image
-                const id = result.id
-
-
-                localStorage.setItem('token', token)
-                localStorage.setItem('username', username)
-                localStorage.setItem('email', email)
-                localStorage.setItem('phone', phone)
-                localStorage.setItem('image', image)
-                localStorage.setItem('id', id)
-
-                const resultSocket = io('https://backend-chat-realtime-telegram.herokuapp.com', {
-                    query: {
-                        token: token
-                    }
-                })
-                setSocket(resultSocket)
-                props.history.push('/chatroom')
-            })
-            .catch((err) => {
-                // console.log(err);
-                toast('Login failed')
-            })
-
-    }
-
-    const validationSchema = Yup.object({
-
-                email: Yup.string().required('Email is required').email('Please enter your correct email'),
-                password: Yup.string().required('Password is required').min(8, "Password must contain at least 8 letters")
     })
+
+    // const handleLogin = (setSocket, { email, password }) => {
+
+    //     dispatch(login(setSocket, { email, password }, history))
+    // }
+
+    // const validationSchema = Yup.object({
+
+    //     email: Yup.string().required('Email is required').email('Please enter your correct email'),
+    //     password: Yup.string().required('Password is required').min(8, "Password must contain at least 8 letters")
+    // })
     return (
         <>
             <div className={style.container}>
                 <div className={style.body}>
                     <div className={style.bodycontent}>
-                        {/* <form onSubmit={formik.handleSubmit}> */}
+                        <form onSubmit={formik.handleSubmit}>
 
-                        <h2>Login</h2>
-                        <h5>Hi, Welcome Back</h5>
-                        <h6>Email</h6>
-                        <Email name="email" type ="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                         {/* {formik.errors.email && formik.touched.email && (<p className={style.valids}>{formik.errors.email}</p>)} */}
-                        <h6>Password</h6>
-                        <Email name="password" type ="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                         {/* {formik.errors.password && formik.touched.password && (<p className={style.valids}>{formik.errors.password}</p>)} */}
-                        <h5><Link to="/forgot">Forgot Password</Link></h5>
-                        <ButtonLogin title="Login" onClick={handleLogin}/>
-                        <h4>Login with</h4>
-                        <GoogleButton />
-                        <h5 className={style.register}>Don't have an account? Register <Link to="/register">here</Link>  </h5>
-                        {/* </form> */}
+                            <h2>Login</h2>
+                            <h5>Hi, Welcome Back</h5>
+                            <h6>Email</h6>
+                            <Email name="email" type="text" placeholder="Email" value={formik.values.email} onChange={formik.handleChange}/>
+                            {formik.errors.email && formik.touched.email && (<p className={style.valids}>{formik.errors.email}</p>)}
+                            <h6>Password</h6>
+                            <Email name="password" type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
+                            {formik.errors.password && formik.touched.password && (<p className={style.valids}>{formik.errors.password}</p>)}
+                            <h5><Link to="/forgot">Forgot Password</Link></h5>
+                            <ButtonLogin title="Login" type="submit" />
+                            <h4>Login with</h4>
+                            <GoogleButton />
+                            <h5 className={style.register}>Don't have an account? Register <Link to="/register">here</Link>  </h5>
+                        </form>
                     </div>
                 </div>
             </div>
