@@ -40,9 +40,10 @@ const Chatroom = ({ socket, ...props }) => {
             socket.off('msgFromBackend')
             socket.on('msgFromBackend', (data) => {
                 console.log('sender id ', data.sender_id);
-                console.log('friend id', friend.id);
+                // console.log('friend id', friend.id);
+                console.log(data)
 
-                if (data.sender_id === friend.id) {
+                if (friend && data.sender_id === friend.id) {
                     setMessages((currentValue) => [...currentValue, data])
                 } else {
                     // NotificationManager.info(`${data.messages}`);
