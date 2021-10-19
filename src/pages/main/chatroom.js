@@ -36,7 +36,7 @@ const Chatroom = ({ socket, ...props }) => {
 
 
     useEffect(() => {
-        if (socket && friend) {
+        if (socket) {
             socket.off('msgFromBackend')
             socket.on('msgFromBackend', (data) => {
                 console.log('sender id ', data.sender_id);
