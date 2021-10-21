@@ -56,6 +56,7 @@ function App() {
         {/* <PublicRoute path="/login" component={Login} />
         <PublicRoute path="/signup" component={Signup} /> */}
         <Route path="/login" render={(props) => <Login {...props} setSocket={setSocket} />} />
+        <Route path="/" render={(props) => <Login {...props} setSocket={setSocket} />} />
         {/* <Route path="/" component={Login} /> */}
         <Route path="/register" component={Register} />
         <Route path="/forgot" component={ForgotPass} />
