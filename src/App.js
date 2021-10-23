@@ -53,17 +53,17 @@ function App() {
   return(
     <BrowserRouter>
       <Switch>
-        {/* <PublicRoute path="/login" component={Login} />
-        <PublicRoute path="/signup" component={Signup} /> */}
-        <Route path="/login" render={(props) => <Login {...props} setSocket={setSocket} />} />
-        <Route path="/" render={(props) => <Login {...props} setSocket={setSocket} />} />
-        {/* <Route path="/" component={Login} /> */}
-        <Route path="/register" component={Register} />
-        <Route path="/forgot" component={ForgotPass} />
-        <Route path="/chatroom"  render={(props) => <Chatroom {...props} socket={socket} />}/>
-        <Route path="/register" component={Register} />
-        <Route path="/profile" component={Profile} />
-        {/* <Route path="/contact" component={Contact} /> */}
+        {/* <PublicRoute exact path="/login" component={Login} />
+        <PublicRoute exact path="/signup" component={Signup} /> */}
+        <Route exact path="/login" render={(props) => <Login {...props} setSocket={setSocket} />} />
+        <Route exact path="/" render={(props) => <Login {...props} setSocket={setSocket} />} />
+        {/* <Route exact path="/" component={Login} /> */}
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/forgot" component={ForgotPass} />
+        <Route exact path="/chatroom"  render={(props) => <Chatroom {...props} socket={socket} />}/>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/profile" component={Profile} />
+        {/* <Route exact path="/contact" component={Contact} /> */}
 
       </Switch>
     </BrowserRouter>
